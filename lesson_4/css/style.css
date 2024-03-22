@@ -1,0 +1,147 @@
+/* Підключення з goole fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,400;0,500;1,500&display=swap');
+
+/* Підключення з goole плагіна */
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,regular,600italic&display=swap");
+
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+  font-family: "Proxima Nova", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.875;
+  color: #2b2929;
+}
+
+.navigation span{
+  font-family: "Rubik", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  font-style: italic;
+  text-transform: uppercase;
+  text-decoration: line-through;
+  text-decoration-color: red;
+  color: blueviolet;
+}
+
+.navigation > ol > li {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(43, 46, 226);
+  text-shadow: 2px 2px 2px rgba(0, 128, 0, 0.5);
+}
+
+.about h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  font-style: italic;
+  text-align: center;
+  color: blue;
+}
+
+.about > p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: right;
+}
+
+.about > p + p {
+  text-align: center;
+}
+
+.choice h2 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: capitalize;
+  text-align: justify;
+  color: rgba(165, 42, 42, 0.8);
+}
+
+.choice span {
+  text-decoration: underline;
+  text-decoration-color: rgb(155, 11, 83);
+  text-decoration-style: double;
+}
+
+.choice a {
+  text-transform: uppercase;
+  text-decoration-line: line-through;
+  text-decoration-style: dashed;
+  text-decoration-color: blue;
+  letter-spacing: 5px;
+  color: chocolate;
+}
+
+.mebel-variety h2 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+  text-align: center;
+  word-spacing: 10px;
+  color: aqua;
+}
+
+.mebel-variety p {
+  text-align: justify;
+}
+
+.mebel-variety__text {
+  font-family: "Proxima Nova";
+  font-weight: 300;
+  font-style: italic;
+  white-space: pre-wrap;
+}
+
+[title~="на"] {
+  font-size: 20px;
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-style:wavy ;
+  text-decoration-color: violet;
+  color: chartreuse;
+}
+
+.badroom-mebel h2 {
+  font-size: 30px;
+  text-transform: capitalize;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: blueviolet;
+  text-decoration-style: dotted;
+  color: crimson;
+}
+
+.badroom-mebel span {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: darkcyan;
+}
+
+.bed-buy h2,
+.living-room h2 {
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* не працює з inline-block */
+
+/* .living-room img {
+  text-align: center;
+} */
+
+.living-room h3 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
