@@ -54,6 +54,12 @@ body {
   text-align: center;
 }
 
+.room-img img {
+  max-width: 100%;
+  /* max-width: 1070px; */
+  /* width: 100%; */
+}
+
 .living-room {
   background-color: #f8f8f8;
   padding: 70px 0;
@@ -121,9 +127,10 @@ p.no-margin {
   display: inline-block;
   font-size: 16px;
   max-width: 300px;
+  width: 100%;
   vertical-align: top;
-  margin: 0 auto;
-  margin-right: 30px;
+  /* margin: 0 auto; */
+  margin: 0 30px 30px 0;
 }
 
 .krovato img {
@@ -172,7 +179,7 @@ p.no-margin {
 }
 
 .newsletter-list ul {
-  margin: 0 -24px -70px 0;
+  margin: 0 -24px -24px 0;
 }
 
 .newsletter-list li {
@@ -180,7 +187,7 @@ p.no-margin {
   font-size: 16px;
   max-width: 200px;
   width: 100%;
-  margin: 0 24px 70px 0;
+  margin: 0 24px 24px 0;
 }
 
 li.no-margin  {
@@ -350,7 +357,7 @@ li.no-margin  {
 .just-block {
   /* max-width: 1300px; */
   width: 100%;
-  min-height: 70px;
+  max-height: 70px;
   background-color: green;
 }
 
@@ -370,8 +377,8 @@ li.no-margin  {
 .just-block-2,
 .just-block-3,
 .just-block-4 {
-  max-width: 100%;
-  width: 1300px;
+  /* max-width: 1300px; */
+  /* width: 100%; */
   background-color: chocolate;
 
 }
