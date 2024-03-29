@@ -54,7 +54,8 @@ body {
   text-align: center;
 }
 
-.room-img img {
+.room-img img,
+.room-img-1 img {
   max-width: 100%;
   /* max-width: 1070px; */
   /* width: 100%; */
@@ -353,6 +354,10 @@ li.no-margin  {
   background-color: #f8f8f8;
   padding: 0;
 }
+
+/* .room-img-1 img {
+  max-width: 100%;
+} */
 
 .just-block {
   /* max-width: 1300px; */
