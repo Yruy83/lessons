@@ -147,7 +147,9 @@ p {
 /* Секція ecommerce */
 
 .ecommerce {
-  background-color: rgba(30, 40, 50, 0.05);
+  /* background-color: rgba(30, 40, 50, 0.05); */
+  background:  url("../img/ecommerce/frame.png") 0 610px / 132px 66px no-repeat ,  
+  rgba(30, 40, 50, 0.05) url("../img/ecommerce/frame-1.png") right 372px / 195px 262px no-repeat;
 }
 
 .ecommerce-container {
@@ -167,7 +169,7 @@ p {
   max-width: 686px;
   width: 100%;
   vertical-align: middle;
-  padding-top: 74px;
+  padding: 74px 0 124px 0;
   margin-right: 98px;
   /* padding-left: 4px; */
 }
@@ -292,7 +294,8 @@ p {
 
 .block {
   font-size: 0;
-  width: 1300px;
+  max-width: 1300px;
+  width: 100%;
   padding: 0 20px;
   margin-bottom: 50px;
 }
