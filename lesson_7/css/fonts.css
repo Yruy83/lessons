@@ -1,0 +1,44 @@
+/* При встановленні шрифту перевірити чи підтримує він кирилицю  */
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova/ProximaNova-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("../fonts/ProximaNova/ProximaNova-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/Exo/Exo-Regular.woff") format("woff"),
+    url("../fonts/Exo/Exo-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../fonts/Exo/Exo-Bold.woff") format("woff"),
+    url("../fonts/Exo/Exo-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  display: swap;
+}
+
+@font-face {
+  font-family: "Orbitron";
+  src: url("../fonts/Orbitron/Orbitron-Medium.woff") format("woff"),
+    url("../fonts/Orbitron/Orbitron-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  display: swap;
+}
