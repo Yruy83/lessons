@@ -108,6 +108,7 @@ header > *:last-child {
 
 .article img {
   max-width: 100%;
+  border-radius: 8px;
 }
 
 .text p:not(:last-child) {
