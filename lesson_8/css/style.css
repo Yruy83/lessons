@@ -1,0 +1,95 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+  font-family: "Proxima Nova";
+  font-weight: 400;
+  font-size: 20px;
+  font-style: normal;
+}
+
+header {
+  font-weight: 600;
+  font-size: 30px;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.images {
+  background-color: #cbce0c;
+}
+
+.images-container {
+  max-width: 1300px;
+  padding: 50px 15px;
+  margin: 0 auto;
+  background-color: #26ad0b85;
+}
+
+.images-container img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.images-container ul {
+  margin-bottom: 50px;
+}
+
+.images-container li {
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.images-container span {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+  vertical-align: middle;
+  margin-left: 35px;
+}
+
+.images-container li:first-child > span {
+  margin-left: 5px;
+}
+
+.images-container li:nth-child(n+2) {
+  padding-left: 236px;
+}
+
+.images-container li:nth-child(n+9) {
+  padding-left: 270px;
+}
+
+.images-container li:nth-child(9) > span {
+  margin-left: 60px;
+}
+
+.images-container li:nth-child(10) > span,
+.images-container li:nth-child(11) > span {
+  margin-left: 75px;
+}
+
+.images-container li:nth-child(n+12) {
+  padding-left: 252px;
+}
+
+.monitor h2 {
+  font-weight: 400;
+  font-size: 25px;
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 0;
+}
+
+footer a {
+  color: #cbce0c;
+  padding: 15px 20px;
+  border: 2px solid rebeccapurple;
+  border-radius: 10px;
+  background-color: #0c6109dc;
+  box-shadow: 4px 4px 5px 2px blue, inset 4px 4px 2px 2px #0d0d0d;
+}
