@@ -1,0 +1,446 @@
+@import url("reset.css");
+
+body {
+	font-family: "Proxima Nova";
+	font-weight: 600;
+	font-size: 19px;
+	line-height: 1.47;
+	/* 28/19 */
+	background-color: #f8f8f8;
+	color: #535353;
+}
+
+.homework {
+	text-align: center;
+	padding: 30px 0;
+}
+
+.homework__title {
+}
+
+.container {
+	max-width: 1320px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header-top {
+	font-size: 0;
+	background-color: #F8F8F8;
+	padding: 15px 0;
+}
+
+.about-us,
+.about-us__item,
+.help-info,
+.help-info__item,
+.language {
+	display: inline-block;
+}
+
+.about-us__list {
+	font-size: 0;
+}
+
+.about-us__item:not(:last-child) {
+	margin-right: 30px;
+}
+
+.about-us__link,
+.help-info__link {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.875;
+	/* 30/16 */
+}
+
+.about-us--margin {
+	margin-right: 336px;
+}
+
+.help-info {
+	font-size: 0;
+	margin-right: 30px;
+}
+
+.help-info__span {
+	font-size: 16px;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+
+.help-info__list {
+	display: inline-block;
+	font-size: 0;
+}
+
+.help-info__link {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.875;
+	/* 30/16 */
+}
+
+.help-info__item {
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+.help-info__item:not(:last-child) {
+	margin-right: 10px;
+}
+
+.language {
+	font-size: 0;
+}
+
+.language__item {
+	font-weight: 600;
+	font-size: 19px;
+	line-height: 1.26;
+	/* 24/19 */
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.language__icon {
+	vertical-align: middle;
+}
+
+.header-main {
+	font-size: 0;
+	background-color: #FFF;
+	padding: 25px 0;
+}
+
+.logo,
+.catalog,
+.search,
+.phones,
+.favorit,
+.cart {
+	display: inline-block;
+	font-size: 16px;
+}
+
+.logo--margin {
+	margin-right: 34px;
+}
+
+.catalog__button,
+.search--margin,
+.phones--margin {
+	margin-right: 30px;
+}
+
+.favorit--margin {
+	margin-right: 20px;
+}
+
+.line {
+	height: 2px;
+	background-color: #f8f8f8;
+}
+
+.header-bottom {
+	font-size: 0;
+	background-color: #FFF;
+	padding: 18px 0;
+}
+
+.sales,
+.rooms,
+.sales__item,
+.rooms__item {
+	display: inline-block;
+	font-size: 0;
+}
+
+.sales__item:not(:last-child) {
+	margin-right: 40px;
+}
+
+.sales--margin {
+	margin-right: 112px;
+}
+
+.sales__item::before {
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin-right: -24px;
+}
+
+.sales__item--star::before {
+	background-image: url("../img/krovato/header/header_bottom_icons/akcii.svg");
+}
+
+.sales__item--sale::before {
+	background-image: url("../img/krovato/header/header_bottom_icons/sale.svg");
+}
+
+.sales__item--credit::before {
+	background-image: url("../img/krovato/header/header_bottom_icons/credit.svg");
+}
+
+.sales__item--star::before,
+.sales__item--sale::before,
+.sales__item--credit::before {
+	vertical-align: bottom;
+}
+
+.sales__link {
+	font-size: 19px;
+	line-height: 1.26;
+	/* 24/19 */
+	padding-left: 34px;
+}
+
+.rooms__item:not(:last-child) {
+	margin-right: 40px;
+}
+
+.rooms__link {
+	font-size: 19px;
+}
+
+/* Популярні категорії */
+
+.popular-categories {
+	background-color: #f8f8f8;
+}
+
+.popular-categories {
+	margin-bottom: 70px;
+}
+
+.title__span--show {
+	display: none;
+}
+
+.categories-card {
+	display: inline-block;
+	border-radius: 8px;
+	box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+	background-color: #FFF;
+	/* padding: 20px; */
+}
+
+.categories-card__image {
+	max-width: 100%;
+}
+
+.categories-card__block-title {
+	font-size: 0;
+	/* max-width: 210px; */
+	width: 100%;
+	padding: 20px 20px 0 20px;
+}
+
+.categories-card__title,
+.categories-card__number {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.4; /* 28/20 */
+	color: #2B2929;
+	max-width: 50%;
+	width: 100%;
+}
+
+.categories-card__number {
+	color: #b1b1b1;
+	text-align: right;
+}
+
+/* Найпопулярніші товари */
+
+.popular-products {
+	background-color: #F8F8F8;
+}
+
+.title {
+	font-size: 0;
+}
+
+.title--margin {
+	margin-bottom: 40px;
+}
+
+.title__heading {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 40px;
+	line-height: 1.20;
+	/* 48/40 */
+	color: #2B2929;
+	vertical-align: middle;
+	margin-right: 30px;
+}
+
+.title__span {
+	vertical-align: middle;
+}
+
+.title__link {
+	font-weight: 600;
+	font-size: 19px;
+	line-height: 1.26;
+	/* 24/19 */
+	color: #FFBC57;
+	/* padding-right: 34px; */
+}
+
+.title__link::after {
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/krovato/popular_products/arrow.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	vertical-align: bottom;
+	margin-left: 10px;
+}
+
+.third-section {
+	font-size: 0;
+	margin: 0 -30px -30px 0;
+}
+
+.products-card {
+	display: inline-block;
+	max-width: 300px;
+	width: 100%;
+	border: 1px solid #E3E2E2;
+	border-radius: 8px;
+	background-color: #FFF;
+	box-shadow: -3px 4px 15px 0px rgba(0, 0, 0, 0.06);
+	padding: 20px;
+	margin: 0 30px 30px 0;
+}
+
+.products-card__image {
+	max-width: 100%;
+	width: 260px;
+	border-radius: 8px;
+	
+}
+
+.products-card__image,
+.products-card__info {
+	margin-bottom: 20px;
+}
+
+.products-card__info > * {
+	margin-bottom: 10px;
+}
+
+.products-card__size,
+.products-card__stock {
+	display: inline-block;
+	font-weight: 300;
+	font-size: 13px;
+	color: #535353;
+line-height: 1.69; /* 22/13 */
+}
+
+.products-card__title {
+	font-weight: 600;
+	font-size: 19px;
+	line-height: 1.26; /* 24/19 */
+	color: #2B2929;
+	min-height: 52px;
+}
+
+.products-card__stock::before {
+	content: "";
+	width: 24px;
+	height: 24px;
+	background-image: url("../img/krovato/popular_products/check.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	vertical-align: middle;
+}
+
+.products-card__info > *:last-child {
+	margin-bottom: 0;
+}
+
+.products-card__price {
+	font-size: 0;
+	max-width: 260px;
+	width: 100%;
+
+}
+
+.products-card__price-block,
+.products-card__price-block-link {
+	display: inline-block;
+	max-width: 50%;
+	width: 100%;
+	/* margin-right: 17%; */
+}
+
+.products-card__price-info {
+	display: block;
+}
+
+.products-card__price-info--old-price {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.46; /* 22/15 */
+	color: #E03D3D;
+	text-decoration: line-through;
+}
+
+.products-card__price-info--show {
+	display: none;
+}
+
+.products-card__price-info--curent-price {
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 1.4; /* 28/20 */
+	color: #2B2929;
+}
+
+.products-card__price-block-link {
+	text-align: right;
+}
+
+.products-card__price-link {
+	text-align: right;
+	vertical-align: bottom;
+}
+
+.products-card__price-link:not(:last-child) {
+	margin-right: 10px;
+}
+
+.products-card__price-favorite,
+.products-card__price-cart {
+	max-width: 50px;
+	width: 100%;
+}
+
+footer {
+	text-align: center;
+	padding: 30px 0;
+}
+
+.footer-button {
+	border: 2px solid red;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px 2px yellow;
+	padding: 15px;
+}
+
+.footer-button:hover {
+	margin: 5px 0 0 5px;
+}
+
