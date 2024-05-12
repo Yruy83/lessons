@@ -155,15 +155,15 @@ body {
 	transform: scale(1.2);
 }
 
-.scale .block-1 .block__item:hover {
+.scale .block-1 .block-1__item:hover {
 	transform: scale(0.5);
 }
 
-.scale .block-2 .block__item:hover {
+.scale .block-2 .block-2__item:hover {
 	transform: scale(1.1, 1.2);
 }
 
-.scale .block-3 .block__item:hover {
+.scale .block-3 .block-3__item:hover {
 	transform: scale(-1, -1);
 }
 
@@ -179,19 +179,19 @@ body {
 	transform: rotate(20deg);
 }
 
-.rotate .block-1 .block__item:hover {
+.rotate .block-1 .block-1__item:hover {
 	transform: rotate(180deg);
 }
 
-.rotate .block-2 .block__item:hover {
+.rotate .block-2 .block-2__item:hover {
 	transform: skew(20deg);
 }
 
-.rotate .block-3 .block__item:hover {
+.rotate .block-3 .block-3__item:hover {
 	transform: skew(20deg, 10deg);
 }
 
-.rotate .block-4 .block__item:hover {
+.rotate .block-4 .block-4__item:hover {
 	transform: rotate(-45deg);
 	transform-origin: right top;
 }
