@@ -1,0 +1,847 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+body {
+	font-family: "Proxima Nova", sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 1.4;
+	background-color: #224d50;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: clip;
+}
+
+.container {
+	max-width: 1320px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header {
+	padding: 20px 0;
+}
+
+[class*="title"] {
+	text-align: center;
+}
+
+.title {
+	font-size: 22px;
+}
+
+.main {
+	font-size: 0;
+	padding: 50px 0;
+}
+
+.translate,
+.scale,
+.rotate,
+.transform-3d {
+	max-width: 1290px;
+	text-align: center;
+}
+
+.translate--margin,
+.scale--margin,
+.rotate--margin,
+.transform-3d {
+	margin-bottom: 35px;
+}
+
+.translate>* {
+	margin-right: 30px;
+}
+
+.sub-title {
+	font-size: 20px;
+}
+
+.sub-title--margin {
+	margin-bottom: 20px;
+}
+
+.block,
+.block-1,
+.block-2,
+.block-3,
+.block-4,
+.block__item,
+.block-1__item,
+.block-2__item,
+.block-3__item,
+.block-4__item {
+	width: 150px;
+	height: 150px;
+}
+
+.block,
+.block-1,
+.block-2,
+.block-3,
+.block-4 {
+	display: inline-block;
+	background-color: #e2cb46;
+	vertical-align: top;
+}
+
+.block__item,
+.block-1__item,
+.block-2__item,
+.block-3__item,
+.block-4__item {
+	background-color: #1dc20e;
+	padding: 20px 5px;
+}
+
+.text-block__title {
+	font-size: 18px;
+	max-width: 140px;
+	width: 100%;
+}
+
+.text-block__title:hover {
+	transform: translateX(10px);
+}
+
+.text-block__span {
+	display: block;
+	font-size: 14px;
+	max-width: 140px;
+	width: 100%;
+	/* text-align: center; */
+}
+
+.text-block__span:hover {
+	transform: translateY(20px);
+}
+
+.block__item:hover {
+	transform: translate(10%, 10%);
+}
+
+.block-1 .block-1__item:hover {
+	transform: translateX(20px);
+}
+
+.block-2 .block-2__item:hover {
+	transform: translateY(20px);
+}
+
+.translate *:last-child {
+	margin-right: 0;
+}
+
+.scale>* {
+	margin-right: 30px;
+}
+
+.scale .text-block__title:hover,
+.rotate .text-block__title:hover,
+.transform-3d .text-block__title:hover {
+	transform: translateX(0);
+}
+
+.scale .text-block__span:hover,
+.rotate .text-block__span:hover,
+.transform-3d .text-block__span:hover {
+	transform: translateY(0);
+}
+
+.scale .block .block__item:hover {
+	transform: scale(1.2);
+}
+
+.scale .block-1 .block__item:hover {
+	transform: scale(0.5);
+}
+
+.scale .block-2 .block__item:hover {
+	transform: scale(1.1, 1.2);
+}
+
+.scale .block-3 .block__item:hover {
+	transform: scale(-1, -1);
+}
+
+.scale *:last-child {
+	margin-right: 0;
+}
+
+.rotate>* {
+	margin-right: 30px;
+}
+
+.rotate .block .block__item:hover {
+	transform: rotate(20deg);
+}
+
+.rotate .block-1 .block__item:hover {
+	transform: rotate(180deg);
+}
+
+.rotate .block-2 .block__item:hover {
+	transform: skew(20deg);
+}
+
+.rotate .block-3 .block__item:hover {
+	transform: skew(20deg, 10deg);
+}
+
+.rotate .block-4 .block__item:hover {
+	transform: rotate(-45deg);
+	transform-origin: right top;
+}
+
+.rotate *:last-child {
+	margin-right: 0;
+}
+
+.transform-3d>* {
+	margin-right: 30px;
+}
+
+.block,
+.block-1,
+.block-2 {
+	perspective: 500px;
+}
+
+.block-3 {
+	perspective: 500px;
+	transform-style: preserve-3d;
+}
+
+.transform-3d .block .block__item:hover {
+	transform: rotateX(45deg);
+}
+
+.transform-3d .block-1 .block-1__item:hover {
+	transform: translate3d(5px, 5px, 20px);
+}
+
+.transform-3d .block-2 .block-2__item:hover {
+	transform: rotate3d(20, 20, 20, 45deg);
+}
+
+.transform-3d .block-3 .block-3__item:hover {
+	transform: rotate3d(20, 20, 20, 1deg);
+
+}
+
+.transform-3d *:last-child {
+	margin-right: 0;
+}
+
+/* .card {
+	max-width: 312px;
+	width: 100%;
+} */
+
+.card--margin {
+	margin-bottom: 30px;
+}
+
+.card__body,
+.card__body-1 {
+	display: inline-block;
+	position: relative;
+	perspective: 500px;
+	vertical-align: top;
+}
+
+.card__body {
+	width: 312px;
+}
+
+.card__body-1 {
+	width: 367px;
+}
+
+.card__body,
+.card__body-1:not(:last-child) {
+	margin-right: 25px;
+}
+
+.front>* {
+	margin-bottom: 18px;
+}
+
+.front {
+	/* position: relative; */
+	backface-visibility: hidden;
+	background-color: #F2F3F5;
+	transform: rotateY(180deg);
+	transition: all 1s;
+}
+
+.front__image {
+	max-width: 312px;
+	width: 100%;
+	margin-bottom: 18px;
+}
+
+.front__image img {
+	max-width: 100%;
+}
+
+.front__labels {
+	position: absolute;
+	left: 0;
+	top: 22px;
+}
+
+.front__label {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	text-transform: uppercase;
+	text-align: center;
+	width: 52px;
+	height: 24px;
+	color: #FFF;
+	background-color: #FF6F61;
+	padding: 4px 12px;
+}
+
+.front__label--black {
+	background-color: #1E2832;
+}
+
+.front__label:not(:last-child) {
+	margin-bottom: 10px;
+}
+
+.front__title {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: normal;
+	text-transform: capitalize;
+	color: #000;
+	text-align: left;
+	padding-left: 10px;
+	margin-bottom: 16px;
+}
+
+.front__span {
+	max-width: 312px;
+	width: 100%;
+}
+
+.front__categories {
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: normal;
+	text-transform: capitalize;
+	color: rgba(0, 0, 0, 0.50);
+	max-width: 50%;
+	width: 100%;
+	text-align: left;
+	padding-left: 10px;
+}
+
+.front__prices {
+	display: inline-block;
+	max-width: 50%;
+	width: 100%;
+	padding-right: 10px;
+	text-align: right;
+}
+
+.front__prices>* {
+	margin-right: 12px;
+}
+
+.front__price {
+	display: inline-block;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	text-transform: capitalize;
+	color: #000;
+}
+
+.front__price--old-price {
+	font-size: 14px;
+	text-decoration-line: line-through;
+	color: rgba(0, 0, 0, 0.50);
+}
+
+.front__price--sale-price {
+	color: #FF6F61;
+}
+
+.front__prices *:last-child {
+	margin-right: 0;
+}
+
+.front *:last-child {
+	margin-bottom: 0;
+}
+
+.back {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	backface-visibility: hidden;
+	transform: rotateY(0deg);
+	transition: all 1s;
+}
+
+.back__image {
+	max-width: 312px;
+	width: 100%;
+	height: 100%;
+}
+
+.back__image img {
+	max-width: 100%;
+	min-height: 100%;
+}
+
+.card__body:hover .front {
+	transform: rotateY(0deg);
+}
+
+.card__body:hover .back {
+	transform: rotateY(-180deg);
+}
+
+.text {
+	font-size: 16px;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+	transition: all 1s;
+}
+
+.card__body:hover .text {
+	transform: rotateY(0deg);
+}
+
+.card__body img {
+	width: 100%;
+}
+
+.back-1 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: rotateY(0deg);
+	transition: all 0.8s;
+}
+
+.front-1 {
+	transition: all 0.8s;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}
+
+.card__body-1:hover .front-1 {
+	transform: rotateY(0deg);
+}
+
+.card__body-1:hover .back-1 {
+	transform: rotateY(-180deg);
+}
+
+.card__body-1:hover .text {
+	transform: rotateY(0deg);
+}
+
+.car {
+	position: relative;
+
+}
+
+.body {
+	width: 397px;
+	height: 150px;
+	background-color: #110f2b;
+	border: 2px solid black;
+	/* border-radius: 81% 0% 100% 55% / 327% 17% 1% 175%; */
+	border-radius: 76px 140px 0 35px;
+}
+
+.bottom {
+	position: absolute;
+	width: 402px;
+	height: 25px;
+	background-color: #050505;
+	border-radius: 7% 9% 8% 55% / 327% 112% 57% 175%;
+	left: 0;
+	bottom: 0;
+}
+
+.left-weel {
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	background-color: #000;
+	border: 2px dashed #0a0a0a;
+	border-radius: 50%;
+	left: 32px;
+	bottom: -23px;
+	
+}
+
+.left-weel--right-side {
+	left: 315px;
+	bottom: -23px;
+}
+
+.left-weel:hover,
+.left-weel--right-side:hover {
+	transform: rotate(360deg);
+	transition: all 0.8s;
+}
+
+.left-weel__inside {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	background-color: grey;
+	border: 1px solid grey;
+	border-radius: 50%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.left-weel__bolt,
+.left-weel__bolt-1,
+.left-weel__bolt-2,
+.left-weel__bolt-3,
+.left-weel__bolt-4 {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	border: 1px solid #000;
+	border-radius: 50%;
+	left: 15px;
+	top: 10px;
+}
+
+.left-weel__bolt-1 {
+	left: 20px;
+	top: 14px;
+}
+
+.left-weel__bolt-2 {
+	left: 10px;
+	top: 14px;
+}
+
+.left-weel__bolt-3 {
+	left: 12px;
+	top: 20px;
+}
+
+.left-weel__bolt-4 {
+	left: 19px;
+	top: 20px;
+}
+
+.left-weel__inside-1 {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border: 1px solid grey;
+	border-radius: 50%;
+	left: 9px;
+	top: 9px;
+}
+
+.left-weel__block,
+.left-weel__block-1,
+.left-weel__block-2,
+.left-weel__block-3,
+.left-weel__block-4,
+.left-weel__block-5,
+.left-weel__block-6,
+.left-weel__block-7 {
+	position: absolute;
+	width: 5px;
+	height: 7px;
+	background-color: grey;
+	/* border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%; */
+	left: 29px;
+	top: 10px;
+	transform: rotate(-4deg);
+}
+
+.left-weel__block-1 {
+	left: 46px;
+	top: 16px;
+	transform: rotate(46deg);
+}
+
+.left-weel__block-2 {
+	left: 52px;
+	top: 30px;
+	transform: rotate(88deg);
+}
+
+.left-weel__block-3 {
+	left: 46px;
+	top: 45px;
+	transform: rotate(135deg);
+}
+
+.left-weel__block-4 {
+	height: 8px;
+	left: 33px;
+	top: 50px;
+	transform: rotate(-5deg);
+}
+
+.left-weel__block-5 {
+	height: 7px;
+	left: 19px;
+	top: 47px;
+	transform: rotate(35deg);
+}
+
+.left-weel__block-6 {
+	height: 8px;
+	left: 11px;
+	top: 34px;
+	transform: rotate(79deg);
+}
+
+.left-weel__block-7 {
+	height: 8px;
+	left: 15px;
+	top: 18px;
+	transform: rotate(122deg);
+}
+
+.back-door {
+	position: absolute;
+	width: 100px;
+	height: 146px;
+	border: 1px solid black;
+	border-radius: 8px 8px 2px 2px;
+	left: 114px;
+	top: 4px;
+}
+
+.back-door__mirror {
+	position: absolute;
+	width: 100px;
+	height: 70px;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-top: 3px solid black;
+	border-radius: 8px 8px 1px 1px;
+	border-bottom: 3px solid black;
+	background-color: grey;
+	left: -1px;
+	top: -1px;
+}
+
+.back-door__line {
+	position: absolute;
+	width: 100px;
+	height: 7px;
+	border: 1px solid black;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 3px 1px black;
+	left: -1px;
+	top: 88px;
+}
+
+.door-hand {
+	position: absolute;
+	width: 10px;
+	height: 15px;
+	border: 1px solid black;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 2px 1px;
+	left: 85px;
+	top: 71px;
+}
+
+.door-hand__block {
+	position: absolute;
+	width: 4px;
+	height: 10px;
+	border: 1px solid black;
+	border-radius: 3px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.line {
+	position: absolute;
+	width: 115px;
+	height: 7px;
+	border: 1px solid black;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 3px 1px black;
+	left: 0px;
+	top: 93px;
+}
+
+.back-mirror {
+	position: absolute;
+	width: 103px;
+	height: 69px;
+	background-color: grey;
+	border: 2px solid black;
+	/* border-right: transparent; */
+	border-radius: 122px 5px 2px 15px;
+	left: 11px;
+	top: 5px;
+}
+
+.back-lights {
+    position: absolute;
+    width: 8px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 2px;
+    left: 0px;
+    top: 73px;
+}
+
+.back-lights__block {
+	position: absolute;
+	width: 5px;
+	height: 7px;
+	background-color: red;
+	border-bottom: 1px solid black;
+	border-left: transparent;
+	border-radius: 1px;
+	left: 1px;
+	top: 0;
+}
+
+.back-lights__block--down {
+	border-top: 1px solid #000;
+	border-radius: 0px;
+	top: 6px;
+}
+
+.back-lights__block--down-next {
+	border-top: 1px solid #000;
+	border-radius: 0px;
+	top: 12px;
+}
+
+.back-lights__block--white {
+	background-color: white;
+}
+
+.front-door {
+	position: absolute;
+	width: 102px;
+	height: 146px;
+	border: 1px solid black;
+	border-radius: 8px 65px 30px 2px;
+	left: 214px;
+	top: 4px;
+}
+
+.front-door__mirror {
+	position: absolute;
+	width: 102px;
+	height: 70px;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-top: 3px solid black;
+	border-radius: 8px 64px 1px 1px;
+	border-bottom: 3px solid black;
+	background-color: grey;
+	left: -1px;
+	top: -1px;
+}
+
+.front-door__line {
+	position: absolute;
+	width: 102px;
+	height: 7px;
+	border: 1px solid black;
+	border-radius: 3px;
+	box-shadow: inset 0px 0px 3px 1px black;
+	left: -1px;
+	top: 88px;
+}
+
+.door-hand--front {
+	left: 3px;
+}
+
+.front-door__glass {
+	position: absolute;
+	width: 20px;
+	height: 30px;
+	border-radius: 3px;
+	background-color: black;
+	border: 1px solid black;
+	left: 85px;
+	top: 38px;
+	transform: rotateY(45deg);
+}
+
+.front-glass {
+	position: absolute;
+	width: 35px;
+	height: 59px;
+	background-color: grey;
+	/* border-top: 1px solid black; */
+	border-right: 2px solid #000;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-radius: 5px 151px 47px 24px;
+	transform: skewX(34deg);
+	left: 316px;
+	top: 16px;
+}
+
+.front-lights {
+	position: absolute;
+	width: 8px;
+	height: 20px;
+	background-color: white;
+	border: 2px solid #000;
+	border-radius: 1px 51px 4px 4px;
+	left: 389px;
+	bottom: 24px;
+}
+
+.line--front {
+	width: 74px;
+	left: 315px;
+	top: 93px;
+}
+
+.front-triangle {
+    position: absolute;
+		display: none;
+    width: 0;
+    height: 0;
+    border-top: 224px solid transparent;
+    /* border-right: 108px solid transparent; */
+    border-bottom: 158px solid white;
+    border-left: 296px solid transparent;
+    transform: skewY(14deg);
+    left: 390px;
+    bottom: 0px;
+}
+
+.front-lights:hover ~ .front-triangle{
+	display: block;
+}
+
+
+/* .car:has(.front-lights:hover) .front-triangle {
+	display: block;
+} */
