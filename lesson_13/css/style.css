@@ -120,6 +120,7 @@ body {
 
 .help__messengers {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 10px;
 }
 
@@ -180,6 +181,8 @@ body {
 
 .haeder-middle__inner {
 	display: flex;
+	flex-wrap: wrap;
+	row-gap: 20px;
 }
 
 .animation-icon:hover {
@@ -768,6 +771,8 @@ line-height: 1.69; /* 22px/13 */
 .promotions__header {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	column-gap: 30px;
 	/* align-items: center; */
 }
 
@@ -813,7 +818,7 @@ line-height: 1.69; /* 22px/13 */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	column-gap: 30px;
+	gap: 30px;
 }
 
 .promotions__img {
