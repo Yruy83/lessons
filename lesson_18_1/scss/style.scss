@@ -1482,7 +1482,7 @@ h3 {
 		text-transform: capitalize;
 		writing-mode: vertical-lr;
 		transform: rotate(-180deg);
-		transition: font-size 0.3s, opacity 0.3s;
+		transition: scale 0.3s, opacity 0.3s;
 		margin-bottom: 8px;
 
 		@include bp($point_2) {
@@ -1502,7 +1502,7 @@ h3 {
 
 		@media (any-hover:hover) {
 			&:hover {
-				transform: scale(1.07);
+				transform: scale(1.07) rotate(180deg);
 			}
 		}
 
