@@ -8,20 +8,14 @@
 
 @import "_mixins.scss";
 
-// @media (prefers-reduced-motion: no-preference) {
-//   body {
-//     scroll-behavior: smooth;
-//   }
-// }
-
 body {
-	font-family: "Exo", sans-serif;
+	font-family: $baseFontFamily, sans-serif;
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 1;
-	color: $primaryTextColor;
-	background-color: $backgroundPrimeryColor;
+	color: $white;
+	background-color: $black;
 
 	// body.lock
 
@@ -30,51 +24,17 @@ body {
 	}
 }
 
-h2 {
-	font-size: 60px;
-	font-weight: 700;
-	line-height: 1.16;
-	/* 70px/60 */
-	text-transform: uppercase;
-
-	@include bp($point_2) {
-		font-size: 50px;
-	}
-
-	@include bp($point_3) {
-		font-size: 42px;
-	}
-
-	@include bp($point_5) {
-		font-size: 32px;
-	}
-
-	@include bp($point_6) {
-		font-size: 24px;
-	}
-}
-
-h3 {
-	font-size: 40px;
-	font-weight: 700;
-	line-height: 1;
-	/* 40px/40 */
-	text-transform: uppercase;
-
-	@include bp($point_3) {
-		font-size: 36px;
-	}
-
-	@include bp($point_5) {
-		font-size: 28px;
-	}
-
-	@include bp($point_6) {
-		font-size: 16px;
-		line-height: 1.07;
-		/* 15px/14 */
-		/* 107.143% */
-	}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .wrapper {
@@ -87,7 +47,7 @@ h3 {
 .page {
 	flex-grow: 1;
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		position: relative;
 	}
 }
@@ -96,7 +56,6 @@ h3 {
 	max-width: 1303px;
 	padding: 0 15px;
 	margin: 0 auto;
-	// overflow: hidden;
 }
 
 .header {
@@ -105,15 +64,29 @@ h3 {
 	top: 0;
 	width: 100%;
 	z-index: 10;
-	background-color: $backgroundColorHeader;
-	padding: 60px 0 46px;
+	background-color: $black1;
+	// padding: 60px 0 50px;
 
-	@include bp($point_3) {
-		// position: relative;
-		padding: 20px 0 0;
+	@include bp($smallScreen, min) {
+		padding: 60px 0 50px;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallScreen1) {
+		padding: 20px 0 0;
+
+		.menu-open &::after {
+			position: fixed;
+			content: "";
+			width: 100%;
+			height: 90px;
+			left: 0;
+			top: 0;
+			background-color: $black;
+			z-index: 3;
+		}
+	}
+
+	@include bp($smallMobile) {
 		padding: 36px 0 3px;
 	}
 
@@ -124,10 +97,9 @@ h3 {
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		// column-gap: 102px;
 		row-gap: 15px;
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			justify-content: space-between;
 		}
 	}
@@ -139,11 +111,11 @@ h3 {
 		// max-width: 177px;
 		// width: 100%;
 
-		@include bp($point_3) {
-			z-index: 3;
+		@include bp($smallScreen1) {
+			z-index: 4;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			max-width: 94px;
 			width: 100%;
 		}
@@ -157,7 +129,7 @@ h3 {
 			letter-spacing: -3px;
 			width: 177px;
 
-			@include bp($point_7) {
+			@include bp($smallMobile) {
 				font-size: 16px;
 				line-height: 1.25;
 				/*125%; /* 20/16 */
@@ -168,34 +140,32 @@ h3 {
 }
 
 .navigation {
+	// flex-basis: 794px;
+	flex-grow: 0;
+	flex-shrink: 0;
 
-	@include bp($point_3) {
+	@include bp($desktop, min) {
+		flex-basis: 794px;
+	}
+
+	@include bp($desktop) {
+		flex-basis: 640px;
+	}
+
+	@include bp($smallScreen1) {
 		position: fixed;
 		left: 0;
 		top: -100%;
 		width: 100%;
 		height: 100%;
-		background-color: #000000;
+		background-color: $black;
 		overflow: auto;
 		padding: 84px 0 30px;
-		transition: top 1s;
+		transition: transform 1s;
 
 		.menu-open & {
-			// transform: translate(0%, 100%);
-			top: 0%;
-		}
-
-		.menu-open &::before {
-			// display: block;
-			position: fixed;
-			// display: none;
-			content: "";
-			width: 100%;
-			height: 90px;
-			left: 0;
-			top: 0;
-			background-color: #000001;
-			z-index: 3;
+			transform: translate(0%, 100%);
+			// top: 0%;
 		}
 	}
 
@@ -205,22 +175,22 @@ h3 {
 		display: flex;
 		flex-wrap: wrap;
 		column-gap: 60px;
-		row-gap: 20px;
+		row-gap: 12px;
 
-		@include bp($point_2) {
+		@include bp($desktop) {
 			column-gap: 20px;
 		}
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			flex-direction: column;
 			align-items: center;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			row-gap: 15px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			row-gap: 10px;
 		}
 	}
@@ -228,10 +198,9 @@ h3 {
 	// .navigation__item
 
 	&__item {
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			width: 100%;
 			text-align: center;
-
 
 			.menu-open & {
 				opacity: 0;
@@ -277,14 +246,14 @@ h3 {
 		padding: 8px 10px 10px 10px;
 		transition: background-color 0.3s, opacity 0.2s;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			font-size: 18px;
 			width: 100%;
 		}
 
 		@media (any-hover: hover) {
 			&:hover {
-				background-color: #6F00A9;
+				background-color: $violet;
 			}
 		}
 
@@ -296,12 +265,12 @@ h3 {
 
 .action-header {
 
-	@include bp($point_3) {
-		display: none;
-	}
+	flex-basis: 99px;
+	flex-grow: 0;
+	flex-shrink: 0;
 
-	@include bp($point_7) {
-		display: block;
+	@include bp($smallScreen1, $smallMobile) {
+		display: none;
 	}
 
 	// .action-header__list
@@ -312,9 +281,15 @@ h3 {
 		column-gap: 17px;
 		row-gap: 15px;
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			column-gap: 12px;
 		}
+	}
+
+	// .action-header__item
+
+	&__item {
+		flex-shrink: 0;
 	}
 
 	// .action-header__link
@@ -330,12 +305,6 @@ h3 {
 			width: 25px;
 		}
 
-		img {
-			width: 100%; //№4 - Вказуй розміри, взагалі 100% всім зображенням, всім. Щоб б не змінив замовник це не має ламатися.
-			height: 100%;
-			object-fit: contain;
-		}
-
 		@media (any-hover: hover) {
 			&:hover {
 				transform: scale(1.3);
@@ -345,6 +314,12 @@ h3 {
 		&:active {
 			opacity: 0.8;
 		}
+
+		img {
+			width: 100%; //№4 - Вказуй розміри, взагалі 100% всім зображенням, всім. Щоб б не змінив замовник це не має ламатися.
+			height: 100%;
+			object-fit: contain;
+		}
 	}
 }
 
@@ -353,29 +328,6 @@ h3 {
 	display: none;
 	width: 44px;
 	height: 44px;
-	// right: -4%;
-	// top: 0;
-	// padding: 12px 7px;
-
-	@include bp($point_3) {
-		display: block;
-		cursor: pointer;
-		z-index: 3;
-
-		.menu-open & span {
-			display: none;
-		}
-
-		.menu-open &::before {
-			top: 47%;
-			transform: rotate(-45deg) translate(0, -50%);
-		}
-
-		.menu-open &::after {
-			top: 42%;
-			transform: rotate(45deg) translate(0, 50%);
-		}
-	}
 
 	&::before,
 	&::after,
@@ -386,7 +338,7 @@ h3 {
 		height: 3px;
 		left: 14px;
 		top: 28px;
-		background-color: #fff;
+		background-color: $white;
 		border-radius: 5px;
 		transition: transform 0.3s;
 	}
@@ -398,6 +350,28 @@ h3 {
 	span {
 		top: 20px;
 	}
+
+	@include bp($smallScreen1) {
+		display: block;
+		cursor: pointer;
+		z-index: 4;
+
+		.menu-open & {
+			span {
+				display: none;
+			}
+
+			&::before {
+				top: 45%;
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				top: 45%;
+				transform: rotate(45deg);
+			}
+		}
+	}
 }
 
 // Секція Hero // Секція Hero // Секція Hero
@@ -408,13 +382,11 @@ h3 {
 	background: url("../img/hero/background.webp") center / cover no-repeat;
 	padding-top: 144px;
 
-	@include bp($point_5) {
+	@include bp($tablets) {
 		padding-top: 80px;
 	}
 
-	@include bp($point_7) {
-		// background: url("../img/hero/background_mobile.webp") 279px 42px / 109px 147px no-repeat,
-		// 	url("../img/hero/background_mobile_1.webp") center bottom / 393px 300px no-repeat;
+	@include bp($smallMobile) {
 		background: url("../img/hero/background_mobile_1.webp") center bottom / 393px 300px no-repeat;
 		padding: 109px 0 22px;
 	}
@@ -424,9 +396,9 @@ h3 {
 		content: "";
 		width: 100%;
 		height: 82px;
-		background-color: #000001;
+		background-color: $black1;
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			display: none;
 		}
 	}
@@ -435,24 +407,24 @@ h3 {
 
 	&__container {
 		display: flex;
-		column-gap: 225px;
+		column-gap: 223px;
 		padding-top: 94px;
 		overflow: visible;
 
-		@include bp($point_2) {
+		@include bp($desktop) {
 			column-gap: 100px;
 		}
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			column-gap: 20px;
 			padding-top: 0;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			align-items: flex-end;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			position: relative;
 			flex-direction: column;
 			align-items: flex-start;
@@ -465,10 +437,10 @@ h3 {
 
 	&__image-section {
 		position: relative;
-		max-width: 688px;
-		// width: 100%;
+		max-width: 376px;
+		width: 100%; //№6 - Якщо зображення не завантажиться ширина має бути такою самою, додатково width 100% додаємо, а max-width не дасть розтягнутися більше ніж те що вказали.
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			align-self: center;
 			max-width: 177px;
 		}
@@ -479,14 +451,11 @@ h3 {
 	&__image {
 		position: relative;
 		display: block;
-		// flex-shrink: 1;
 		max-width: 376px;
-		width: 100%; //№6 - Якщо зображення не завантажиться ширина має бути такою самою, додатково width 100% додаємо, а max-width не дасть розтягнутися більше ніж те що вказали.
+		width: 100%;
 		z-index: 2;
 
-
-
-		@media (min-width: 394px) {
+		@media (min-width: 480px) {
 			aspect-ratio: 376 / 508;
 
 			img {
@@ -496,13 +465,11 @@ h3 {
 			}
 		}
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			aspect-ratio: 376 / 375;
-			// width: 376px;
-			// height: 375px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			aspect-ratio: 177/260;
 
 			& img {
@@ -516,7 +483,7 @@ h3 {
 	&__small-decor {
 		display: none;
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			position: absolute;
 			display: block;
 			right: 1%;
@@ -537,18 +504,17 @@ h3 {
 		position: absolute;
 		left: -44%;
 		bottom: 0%;
-		// aspect-ratio: 688 / 508;
 		width: 182%;
 		height: 95%;
+
+		@include bp($smallMobile) {
+			display: none;
+		}
 
 		img {
 			width: 100%;
 			height: 100%;
 			object-fit: contain;
-		}
-
-		@include bp($point_7) {
-			display: none;
 		}
 	}
 }
@@ -560,20 +526,17 @@ h3 {
 	row-gap: 20px;
 	flex-basis: 584px;
 	flex-grow: 0;
-	flex-shrink: 1;
-	// max-width: 584px;
-	// width: 100%;
 	padding-top: 29px;
 
-	@include bp($point_3) {
+	@include bp($smallScreen1) {
 		flex-basis: 500px;
 	}
 
-	@include bp($point_4) {
+	@include bp($smallScreen2) {
 		flex-basis: 460px;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		row-gap: 12px;
 		max-width: 233px;
 		width: 100%;
@@ -581,7 +544,7 @@ h3 {
 		padding-top: 0;
 	}
 
-	@include bp($point_8) {
+	@include bp($extraSmallMobile) {
 		max-width: 189px;
 	}
 
@@ -597,11 +560,11 @@ h3 {
 		letter-spacing: -0.36px;
 		text-transform: uppercase;
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			font-size: 14px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			row-gap: 2px;
 			line-height: 1.07;
 			/*107.142857%; /* 15px/14 */
@@ -613,7 +576,7 @@ h3 {
 			content: "";
 			min-width: 126%;
 			height: 1px;
-			background-image: $textLineColor;
+			background-image: $textLineGradient;
 		}
 	}
 
@@ -626,18 +589,18 @@ h3 {
 		letter-spacing: -0.36px;
 		text-transform: capitalize;
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			font-size: 14px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			line-height: 1.07;
 			/* 15px/14 */
 			/* 107.143% */
 			letter-spacing: -0.28px;
 		}
 
-		@include bp($point_8) {
+		@include bp($extraSmallMobile) {
 			text-align: center;
 		}
 	}
@@ -655,53 +618,33 @@ h3 {
 
 		@include adaptiveValue("font-size", 80, 32);
 
-		// @include bp($point_2) {
-		// 	font-size: 70px;
-		// }
-
-		// @include bp($point_3) {
-		// 	font-size: 60px;
-		// }
-
-		// @include bp($point_4) {
-		// 	font-size: 48px;
-		// }
-
-		// @include bp($point_5) {
-		// 	font-size: 42px;
-		// }
-
-		// @include bp($point_6) {
-		// 	font-size: 32px;
-		// }
-
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			line-height: 1.09;
 			/* 35px/32 */
 			/* 109.375% */
 		}
 
-		@include bp($point_8) {
+		@include bp($extraSmallMobile) {
 			font-size: 26px;
 		}
 	}
 }
 
 .button {
-	@include button (20px, $primaryTextColor, 15px 60px, $buttonPrimeryColor);
+	@include button (20px, $white, 15px 60px, $violet);
 	font-family: "Orbitron", sans-serif;
 	font-weight: 900;
 	transition: background-color 0.3s, color 0.3s;
 
-	@include bp($point_3) {
+	@include bp($smallScreen1) {
 		padding: 15px 40px;
 	}
 
-	@include bp($point_6) {
+	@include bp($mobile) {
 		padding: 15px 30px;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		font-size: 14px;
 		line-height: 1.42;
 		/* 20px/14 */
@@ -709,31 +652,34 @@ h3 {
 		padding: 8px 40px;
 	}
 
-	@include bp($point_8) {
+	@include bp($extraSmallMobile) {
 		margin: 0 auto;
 	}
 
-	// .button--padding
+	// .button--small-size-mod
 
-	&--padding {
-		padding: 10px 40px;
-	}
-
-	// .button--font-size
-
-	&--font-size {
+	&--small-size-mod {
 		font-size: 18px;
+		line-height: 1.11;
+		/* 20px/18 */
+		/* 111.111% */
+		padding: 10px 40px;
+
+		@include bp($smallMobile) {
+			// width: 100%;
+			padding: 8px 70px;
+		}
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: $buttonHoverColor;
+			background-color: $blue;
 		}
 	}
 
 	&:active {
-		color: $textColorActive;
-		background-color: $buttonActiveColor;
+		color: $blue;
+		background-color: $white;
 	}
 }
 
@@ -741,21 +687,24 @@ h3 {
 /* Секція About-me */
 
 .about-me {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.99) 85.54%), url("../img/about_me/bckgi_about_me.webp") lightgray center center/ cover no-repeat;
+	background: $backgroundgradient;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	padding-bottom: 84px;
 
-	@include bp($point_4) {
+	@include bp($smallScreen2) {
 		padding-bottom: 42px;
 	}
 
-	@include bp($point_6) {
+	@include bp($mobile) {
 		padding-bottom: 24px;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		position: relative;
 		background: none;
-		padding-bottom: 35px;
+		padding-bottom: 36px;
 	}
 
 	// .about-me__block
@@ -764,11 +713,11 @@ h3 {
 		padding: 120px 61px;
 		overflow: hidden;
 
-		@include bp($point_2) {
+		@include bp($desktop) {
 			padding: 60px 30px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			padding: 0;
 			margin-bottom: 20px;
 		}
@@ -780,11 +729,11 @@ h3 {
 		text-align: center;
 		margin-bottom: 60px;
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			margin-bottom: 40px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			margin: 0 auto;
 			max-width: 332px;
 			width: 100%;
@@ -801,17 +750,13 @@ h3 {
 			text-align: center;
 			text-transform: capitalize;
 
+			&:not(:last-child) {
+				margin-bottom: 25px;
+			}
+
 			@include adaptiveValue("font-size", 18, 14);
 
-			// @include bp($point_5) {
-			// 	font-size: 16px;
-			// }
-
-			// @include bp($point_6) {
-			// 	font-size: 14px;
-			// }
-
-			@include bp($point_7) {
+			@include bp($smallMobile) {
 				line-height: 2.14;
 				/* 30px/14 */
 				/* 214.286% */
@@ -830,22 +775,10 @@ h3 {
 
 		@include adaptiveValue("column-gap", 60, 20);
 
-		// @include bp($point_3) {
-		// 	column-gap: 40px;
-		// }
-
-		// @include bp($point_5) {
-		// 	column-gap: 30px;
-		// }
-
-		// @include bp($point_6) {
-		// 	column-gap: 20px;
-		// }
-
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			position: absolute;
 			left: 11px;
-			top: -339px;
+			top: -341px;
 		}
 	}
 
@@ -859,31 +792,14 @@ h3 {
 
 		@include adaptiveValue("column-gap", 60, 20);
 
-		// @include bp($point_3) {
-		// 	column-gap: 40px;
-		// }
-
-		// @include bp($point_5) {
-		// 	column-gap: 30px;
-		// }
-
-		// @include bp($point_6) {
-		// 	column-gap: 20px;
-		// }
-
-		// @include bp($point_7) {
-		// 	column-gap: 20px;
-		// }
-
 		&::after {
 			content: "";
 			width: 10px;
 			height: 10px;
 			border-radius: 50%;
-			background-image: $textLineColor;
-			// margin-left: 60px;
+			background-image: $textLineGradient;
 
-			@include bp($point_7) {
+			@include bp($smallMobile) {
 				width: 4px;
 				height: 4px;
 			}
@@ -903,7 +819,7 @@ h3 {
 
 		@include adaptiveValue("font-size", 20, 14);
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			line-height: 1.07;
 			/* 15px/14 */
 			/* 107.143% */
@@ -931,35 +847,63 @@ h3 {
 }
 
 .section-title {
-	// display: flex;               Лінія під текстом за допомогою флекс
-	// justify-content: center;        Лінія під текстом за допомогою флекс
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1.16;
+	/* 70px/60 */
 	text-align: center;
-	// margin-bottom: 40px;
-	// margin-bottom: 20px;               Лінія під текстом за допомогою флекс
+	text-transform: uppercase;
 
-	// .section-title--left
+	@include adaptiveValue("font-size", 60, 24);
 
-	&--left {
+	h2 {
+		position: relative;
+		display: inline-block;
+		z-index: 2;
+
+		&::after {
+			position: absolute;
+			display: block;
+			content: "";
+			min-width: 133%;
+			height: 1px;
+			background-image: $textLineGradient;
+			left: 50%;
+			bottom: -20px;
+			transform: translateX(-50%);
+
+			@include bp($smallMobile) {
+				bottom: -5px;
+			}
+		}
+	}
+
+	// .section-title--footer-inner
+
+	&--footer-inner {
+
 		text-align: left;
+		margin-bottom: 60px;
+
+		@include bp($smallMobile) {
+			font-size: 24px;
+			line-height: 1.25;
+			/* 30px/24 */
+			/* 125% */
+		}
 
 		h2 {
-
-			@include bp($point_7) {
-				font-size: 24px;
-				line-height: 1.25;
-				/* 30px/24 */
-				/* 125% */
-			}
+			max-width: 959px;
 
 			&::after {
 				left: 0;
 				transform: translateX(0);
 
-				@include bp($point_6) {
+				@include bp($mobile) {
 					bottom: -10px;
 				}
 
-				@include bp($point_7) {
+				@include bp($smallMobile) {
 					bottom: -4px;
 				}
 			}
@@ -971,7 +915,7 @@ h3 {
 	&--about-me-margin {
 		margin-bottom: 40px;
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			margin-bottom: 26px;
 		}
 	}
@@ -979,33 +923,27 @@ h3 {
 	// .section-title--portfolio-margin,
 	// .section-title--testimonials-margin
 
-	&--portfolio-margin,
-	&--testimonials-margin {
+	&--margin {
 		margin-bottom: 140px;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			margin-bottom: 100px;
 		}
 
-		@include bp($point_6) {
-			margin-bottom: 26px;
+		@include bp($mobile) {
+			margin-bottom: 27px;
 		}
-	}
-
-	// .section-title--footer-inner-margin
-
-	&--footer-inner-margin {
-		margin-bottom: 60px;
 	}
 
 	// .section-title--mobile
 
 	&--mobile {
 		display: none;
+		text-align: left;
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			display: block;
-			margin-bottom: 47px;
+			margin-bottom: 45px;
 
 			h2 {
 				font-size: 24px;
@@ -1014,32 +952,6 @@ h3 {
 				/* 30px/24 */
 				/* 125% */
 				text-transform: uppercase;
-			}
-		}
-	}
-
-	h2 {
-		position: relative;
-		display: inline-block;
-		// display: flex;            Лінія під текстом за допомогою флекс
-		// flex-direction: column;   Лінія під текстом за допомогою флекс
-		// row-gap: 20px;             Лінія під текстом за допомогою флекс
-		// align-items: center;    Лінія під текстом за допомогою флекс
-		z-index: 2;
-
-		&::after {
-			position: absolute;
-			display: block;
-			content: "";
-			min-width: 133%;
-			height: 1px;
-			background-image: $textLineColor;
-			left: 50%;
-			bottom: -20px;
-			transform: translateX(-50%);
-
-			@include bp($point_7) {
-				bottom: -5px;
 			}
 		}
 	}
@@ -1053,34 +965,12 @@ h3 {
 	position: relative;
 	padding: 100px 0 89px;
 
+	& .section-title {
+		text-align: left;
+	}
+
 	@include adaptiveValue("padding-top", 100, 36);
 	@include adaptiveValue("padding-bottom", 89, 43);
-
-	// @include bp($point_3) {
-	// 	// padding-bottom: 150px;
-	// }
-
-	// @include bp($point_4) {
-	// 	padding: 50px 0 89px;
-	// }
-
-	// @include bp($point_6) {
-	// 	padding-bottom: 84px;
-	// }
-
-	// @include bp($point_7) {
-	// 	padding: 36px 0 43px;
-	// }
-
-	& h3 {
-
-		@include bp($point_7) {
-			font-size: 14px;
-			line-height: 1.07;
-			/* 15px/14 */
-			/* 107.143% */
-		}
-	}
 
 	// .portfolio__list
 
@@ -1093,7 +983,7 @@ h3 {
 		overflow-y: hidden;
 		z-index: 2;
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			column-gap: 21px;
 		}
 	}
@@ -1109,17 +999,17 @@ h3 {
 		flex-basis: 360px;
 		flex-shrink: 0;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			flex-basis: 300px;
 			row-gap: 35px;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			flex-basis: 250px;
 			column-gap: 30px;
 		}
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			flex-basis: 193px;
 			flex-shrink: 0;
 			row-gap: 21px;
@@ -1131,18 +1021,19 @@ h3 {
 	&__image {
 		position: relative;
 		flex-grow: 1;
-		// max-width: 360px;
+		max-width: 360px;
 		// width: 100%;
+		aspect-ratio: 360/360;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			max-width: 300px;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			max-width: 250px;
 		}
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			max-width: 193px;
 		}
 
@@ -1178,16 +1069,9 @@ h3 {
 			transition: opacity 0.5s, top 0.5s;
 		}
 
-		img {
-			width: 100%;
-			height: 100%;
-			aspect-ratio: 360 / 360;
-			object-fit: contain;
-		}
-
 		@media (any-hover: hover) {
 			&:hover::before {
-				border-color: #6F00A9;
+				border-color: $violet;
 				background-color: transparent;
 			}
 
@@ -1200,6 +1084,13 @@ h3 {
 
 		&:active {
 			opacity: 0.3;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			// aspect-ratio: 360 / 360;
+			object-fit: contain;
 		}
 	}
 
@@ -1218,6 +1109,31 @@ h3 {
 			width: 100%;
 		}
 	}
+
+	// .portfolio__title
+
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1;
+		/* 40px/40 */
+		text-transform: uppercase;
+
+		@include adaptiveValue("font-size", 40, 16);
+
+		@include bp($mobile) {
+			line-height: 1.07;
+			/* 15px/14 */
+			/* 107.143% */
+		}
+
+		@include bp($smallMobile) {
+			font-size: 14px;
+			line-height: 1.07;
+			/* 15px/14 */
+			/* 107.143% */
+		}
+	}
 }
 
 // Секція testimonials
@@ -1230,32 +1146,22 @@ h3 {
 	@include adaptiveValue("padding-top", 89, 43);
 	@include adaptiveValue("padding-bottom", 150, 60);
 
-	// @include bp($point_5) {
-	// 	padding-bottom: 100px;
-	// }
-
-	// @include bp($point_6) {
-	// 	padding-bottom: 60px;
-	// }
-
-	// @include bp($point_7) {
-	// 	padding: 43px 0 60px;
-	// }
-
-	// .testimonials__block
-
 	&__block {
-		padding: 0 106px;
+		// padding: 0 106px;
 
-		@include bp($point_3) {
+		@include bp(992px, min) {
+			padding: 0 106px;
+		}
+
+		@include bp($smallScreen1) {
 			padding: 0 70px;
 		}
 
-		@include bp($point_4) {
+		@include bp($smallScreen2) {
 			padding: 0 20px;
 		}
 
-		@include bp($point_6) {
+		@include bp($extraSmallMobile) {
 			padding: 0;
 		}
 	}
@@ -1264,20 +1170,18 @@ h3 {
 
 	&__list {
 		display: flex;
-		// justify-content: flex-start;
 		column-gap: 80px;
-		// max-width: 1060px;
 		overflow: auto;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			column-gap: 40px;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			column-gap: 35px;
 		}
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			flex-direction: column;
 			align-items: center;
 			row-gap: 24px;
@@ -1293,36 +1197,25 @@ h3 {
 		row-gap: 10px;
 		flex-basis: 300px;
 		flex-shrink: 0;
-		background-color: $cardPrimeryColor;
+		background-color: $violet;
 		padding: 70px 35px;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			flex-basis: 250px;
 			flex-shrink: 0;
 			padding: 40px 25px;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			flex-basis: 205px;
 			padding: 30px 15px;
 		}
 
-		@include bp($point_6) {
+		@include bp($mobile) {
 			max-width: 230px;
 			width: 100%;
 			padding: 35px 32px;
 			flex-basis: 0;
-		}
-
-		h3 {
-			// flex-grow: 1;
-
-			@include bp($point_6) {
-				font-size: 20px;
-				line-height: 2;
-				/* 40px/20 */
-				/* 200% */
-			}
 		}
 
 		span {
@@ -1331,11 +1224,11 @@ h3 {
 			/* 175% */
 			text-transform: capitalize;
 
-			@include bp($point_3) {
+			@include bp($smallScreen1) {
 				font-size: 18px;
 			}
 
-			@include bp($point_6) {
+			@include bp($mobile) {
 				line-height: 1.11;
 				/* 20px/18 */
 				/* 111.111% */
@@ -1349,11 +1242,11 @@ h3 {
 			text-align: center;
 			text-transform: capitalize;
 
-			@include bp($point_3) {
+			@include bp($smallScreen1) {
 				font-size: 18px;
 			}
 
-			@include bp($point_6) {
+			@include bp($mobile) {
 				font-size: 14px;
 				line-height: 2.14;
 				/* 30px/14 */
@@ -1362,8 +1255,25 @@ h3 {
 			}
 		}
 	}
-}
 
+	// .testimonials__title
+
+	&__title {
+		flex-grow: 1;
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1;
+		/* 40px/40 */
+		text-transform: uppercase;
+
+		@include bp($mobile) {
+			font-size: 20px;
+			line-height: 2;
+			/* 40px/20 */
+			/* 200% */
+		}
+	}
+}
 
 // Секція separator
 
@@ -1373,7 +1283,7 @@ h3 {
 	height: 50px;
 	background-image: $separatorGradientColor;
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		height: 20px;
 	}
 }
@@ -1383,13 +1293,14 @@ h3 {
 /* Секція Footer*/
 
 .footer {
+	position: relative;
 	padding: 160px 0 111px;
 
-	@include bp($point_2) {
+	@include bp($desktop) {
 		position: relative;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		position: relative;
 		padding: 40px 0 150px;
 	}
@@ -1398,34 +1309,37 @@ h3 {
 
 	&__container {
 		display: flex;
-		// align-items: center;
-		flex-wrap: wrap;
-		column-gap: 253px;
+		flex-direction: column;
+		// row-gap: 80px;
 
-		@include bp($point_1, max) {
+		@include bp($largeScreen, max) {
 			column-gap: 100px;
 		}
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			justify-content: center;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			flex-direction: column;
-			row-gap: 89px;
+			row-gap: 9px;
 		}
 	}
 
 	// .footer__inner
 
 	&__inner {
-		flex-basis: 959px;
-		margin-bottom: 80px;
-		overflow: hidden;
+		max-width: 959px;
+		width: 100%;
+		// margin-bottom: 80px;
+		// overflow: hidden;
 
-		@include bp($point_3) {
-			flex-basis: 670px;
-			flex-grow: 0;
+		&:not(:last-child) {
+			margin-bottom: 80px;
+		}
+
+		@include bp($smallScreen1) {
+			// flex-grow: 0;
 
 			& .title-block .section-title {
 				text-align: center;
@@ -1440,7 +1354,7 @@ h3 {
 			}
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -1463,71 +1377,50 @@ h3 {
 				}
 			}
 		}
-
-		&__info {
-
-			@include bp($point_7) {
-				display: flex;
-				flex-direction: column;
-				flex-grow: 1;
-				row-gap: 44px;
-			}
-		}
 	}
 
-	// .footer__scroll-up
+	// .footer__info
 
-	&__scroll-up {
-		letter-spacing: -0.4px;
-		text-transform: capitalize;
-		writing-mode: vertical-lr;
-		transform: rotate(-180deg);
-		transition: font-size 0.3s, opacity 0.3s;
-		margin-bottom: 8px;
+	&__info {
+		max-width: 959px;
+		width: 100%;
 
-		@include bp($point_2) {
-			position: absolute;
-			writing-mode: inherit;
-			left: 50%;
-			top: 90%;
-			background-color: #6F00A9;
-			padding: 10px;
-			margin-bottom: 0;
-			transform: rotate(0deg) translateX(-50%);
+		&:not(:last-child) {
+			margin-bottom: 30px;
 		}
 
-		@include bp($point_7) {
-			display: none;
-		}
-
-		@media (any-hover:hover) {
-			&:hover {
-				transform: scale(1.07);
-			}
-		}
-
-		&:active {
-			opacity: 0.5;
+		@include bp($smallMobile) {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
 		}
 	}
 }
 
 .form-footer {
 	display: flex;
+	// justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	row-gap: 30px;
 	column-gap: 40px;
 
-	@include bp($point_3) {
+	&:not(:last-child) {
+		margin-bottom: 40px;
+	}
+
+	@include bp($smallScreen1) {
 		justify-content: center;
 		align-items: flex-end;
 	}
 
-	@include bp($point_5) {
+	@include bp($tablets) {
 		flex-direction: column;
 		align-items: center;
 		row-gap: 20px;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		flex-direction: column;
 		align-items: center;
 		row-gap: 12px;
@@ -1536,23 +1429,23 @@ h3 {
 	// .form-footer__wrapper
 
 	&__wrapper {
-		// position: relative;
 		display: flex;
 		align-items: center;
-		column-gap: 40px;
+		flex-basis: 38.5%;
+		column-gap: 13px;
 
-		@include bp($point_3) {
+		@include bp($smallScreen1) {
 			flex-direction: column;
 		}
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			justify-content: space-between;
 			flex-direction: row;
 			max-width: 445px;
 			width: 100%;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			flex-direction: column;
 			row-gap: 12px;
 		}
@@ -1561,16 +1454,19 @@ h3 {
 	// .form-footer__name-label
 
 	&__label {
+		flex-grow: 1;
 		line-height: 1.75;
 		/* 35px/20 */
+		// text-align: center;
 		letter-spacing: -0.4px;
 		text-transform: capitalize;
+		// flex-basis: 50%;
 
-		@include bp($point_5) {
+		@include bp($tablets) {
 			flex-shrink: 0;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			font-size: 16px;
 			line-height: 1.12;
 			/* 18px/16 */
@@ -1583,30 +1479,24 @@ h3 {
 
 	&__field {
 		position: relative;
-		border: 1px solid #212121;
+		border: 1px solid $blackTransparent;
 		width: 200px;
 		height: 45px;
 		padding: 10px;
 		transition: border-color 0.3s, color 0.4s;
 
-		@include bp($point_5) {
+		@include bp($smallScreen1) {
+			width: 100%;
+		}
+
+		@include bp($tablets) {
 			width: 56%;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			width: 100%;
 			height: 36px;
 			padding: 8px 12px;
-		}
-
-		@media (any-hover: hover) {
-			&:hover {
-				border-color: #ffffffc9;
-			}
-
-			&:hover::placeholder {
-				color: #ffffffc9;
-			}
 		}
 
 		&::placeholder {
@@ -1616,14 +1506,13 @@ h3 {
 			/* 25px/18 */
 			letter-spacing: -0.36px;
 			text-transform: capitalize;
-			color: $placeholderTextColor;
-			background-color: $backgroundPrimeryColor;
-			// text-align: center;
+			color: $grey;
+			background-color: $black;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
 
-			@include bp($point_7) {
+			@include bp($smallMobile) {
 				font-size: 16px;
 				line-height: 1.125;
 				/* 18px/16 */
@@ -1637,80 +1526,76 @@ h3 {
 			left: 15%;
 			top: 10%;
 		}
-	}
 
-	// .form-footer .button
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: $lightGrey;
+			}
 
-	& .button {
-		font-size: 18px;
-		line-height: 1.11;
-		/* 20px/18 */
-		/* 111.111% */
-
-		@include bp($point_7) {
-			// width: 100%;
-			padding: 8px 70px;
+			&:hover::placeholder {
+				color: $lightGrey;
+			}
 		}
 	}
 }
 
 .address-footer {
 	display: flex;
+	flex-wrap: wrap;
 	column-gap: 80px;
+	row-gap: 20px;
 
-	@include bp($point_3) {
+	@include bp($smallScreen1) {
 		column-gap: 30px;
 	}
 
-	@include bp($point_5) {
+	@include bp($tablets) {
 		flex-direction: column;
 		row-gap: 20px;
 	}
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		row-gap: 12px;
 		margin-bottom: 60px;
 	}
 
-	// .address-footer__phone-block,
-	// .address-footer__location-block,
-	// .address-footer__email-block
+	// .address-footer__block
 
-	&__phone-block,
-	&__location-block,
-	&__email-block {
+	&__block {
 		display: flex;
 		align-items: center;
+		flex-shrink: 0;
 		column-gap: 20px;
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			column-gap: 8px;
 		}
-	}
 
-	&__phone-block {
-		order: 1;
-	}
+		// address-footer__block--phone
 
-	&__location-block {
-		order: 2;
-	}
-
-	&__email-block {
-		order: 3;
-
-		@include bp($point_7) {
+		&--phone {
 			order: 1;
+		}
+
+		//address-footer__block--location
+		&--location {
+			order: 2;
+		}
+
+		// address-footer__block--email
+	
+		&--email {
+			order: 3;
+	
+			@include bp($smallMobile) {
+				order: 1;
+			}
 		}
 	}
 
-	// .address-footer__icon-phone,
-	// .address-footer__icon-location,
-	// .address-footer__icon-email
+	// .address-footer__icon
 
-	&__icon-phone,
-	&__icon-location,
-	&__icon-email {
+	&__icon {
 		// max-width: 20px;
 		width: 20px;
 		height: 20px;
@@ -1720,30 +1605,26 @@ h3 {
 			height: 100%;
 			object-fit: contain;
 		}
+
+		// .address-footer__icon--email
+
+		&--email {
+			height: 15px;
+		}
 	}
 
-	// .address-footer__icon-email
+	// .address-footer__text
 
-	&__icon-email {
-		height: 15px;
-	}
-
-	// .address-footer__phone-number,
-	// .address-footer__location-name,
-	// .address-footer__email
-
-	&__phone-number,
-	&__location-name,
-	&__email {
+	&__text {
 		letter-spacing: -0.4px;
 		text-transform: capitalize;
 		transition: transform 0.3s, opacity 0.3s;
 
-		@include bp($point_4) {
+		@include bp($smallScreen2) {
 			font-size: 17px;
 		}
 
-		@include bp($point_7) {
+		@include bp($smallMobile) {
 			font-size: 14px;
 			font-style: normal;
 			line-height: 1.42;
@@ -1761,23 +1642,19 @@ h3 {
 		&:active {
 			opacity: 0.5;
 		}
-	}
 
-	// .address-footer__email
+			// .address-footer__text--email
 
-	&__email {
-		text-transform: lowercase;
+		&--email {
+			text-transform: lowercase;
+		}
 	}
 }
 
-
 .social-footer {
-	// position: absolute;
 	display: none;
-	// left: 50%;
-	// top: 50%;
 
-	@include bp($point_7) {
+	@include bp($smallMobile) {
 		display: block;
 	}
 
@@ -1803,12 +1680,6 @@ h3 {
 			width: 25px;
 		}
 
-		img {
-			width: 100%; //№4 - Вказуй розміри, взагалі 100% всім зображенням, всім. Щоб б не змінив замовник це не має ламатися.
-			height: 100%;
-			object-fit: contain;
-		}
-
 		@media (any-hover: hover) {
 			&:hover {
 				transform: scale(1.3);
@@ -1818,5 +1689,54 @@ h3 {
 		&:active {
 			opacity: 0.8;
 		}
+
+		img {
+			width: 100%; //№4 - Вказуй розміри, взагалі 100% всім зображенням, всім. Щоб б не змінив замовник це не має ламатися.
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+
+// .footer__scroll-up
+
+.footer__scroll-up {
+	position: absolute;
+	right: 6%;
+	// top: 38%;
+	bottom: 0;
+	letter-spacing: -0.4px;
+	text-transform: capitalize;
+	writing-mode: vertical-lr;
+	transform: rotate(-180deg);
+	transition: scale 0.3s, opacity 0.3s;
+	margin-bottom: 140px;
+
+	@include bp($desktop) {
+		position: absolute;
+		writing-mode: inherit;
+		// left: 50%;
+		// top: 90%;
+		right: 50%;
+		bottom: 0%;
+		background-color: $violet;
+		padding: 10px;
+		margin-bottom: 0;
+		transform: rotate(0deg) translateX(50%);
+	}
+
+	@include bp($smallMobile) {
+		bottom: 5%;
+		font-size: 16px;
+	}
+
+	@media (any-hover:hover) {
+		&:hover {
+			transform: scale(1.07) rotate(180deg);
+		}
+	}
+
+	&:active {
+		opacity: 0.5;
 	}
 }

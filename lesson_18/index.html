@@ -56,15 +56,24 @@
 					<ul class="action-header__list">
 						<li class="action-header__item">
 							<a href="#" class="action-header__link">
+								<span class="sr-only">
+									facebook icon
+								</span>
 								<img src="./img/header/facebook.svg" alt="facebook icon">
 							</a>
 						</li>
 						<li class="action-header__item">
 							<a href="#" class="action-header__link">
+								<span class="sr-only">
+									linkidin icon
+								</span>
 								<img src="./img//header/linkidin.svg" alt="linkidin icon">
 							</a>
 						</li>
 						<li class="action-header__item">
+							<span class="sr-only">
+								youtube icon
+							</span>
 							<a href="#" class="action-header__link action-header__link--icon-size">
 								<img src="./img/header/youtube.svg" alt="youtube icon">
 							</a>
@@ -74,6 +83,7 @@
 
 				<button class="menu-burger" type="button">
 					<span></span>
+					<span class="sr-only">Open menu</span>
 				</button>
 
 			</div>
@@ -106,7 +116,7 @@
 
 					<div class="hero__image-section">
 						<picture class="hero__image">
-							<source media="(max-width: 393px)" srcset="img/hero/image_user_1.webp">
+							<source media="(max-width: 480px)" srcset="img/hero/image_user_1.webp">
 							<img src="./img/hero/image_user.webp" alt="hero-image">
 						</picture>
 						<div class="hero__bg-decor">
@@ -117,7 +127,7 @@
 				</div>
 			</section>
 
-			<section class="about-me">
+			<section class="about-me" style="background-image: url('./img/about_me/background_about_me.webp');">
 
 				<div class="about-me__container">
 
@@ -173,7 +183,7 @@
 						</ul>
 
 					</div>
-					
+
 					<div class="about-me__social">
 					</div>
 				</div>
@@ -184,7 +194,7 @@
 				<div class="portfolio__container">
 
 					<div class="title-block">
-						<div class="section-title section-title--left section-title--portfolio-margin">
+						<div class="section-title section-title--margin">
 							<h2>
 								my best edits
 							</h2>
@@ -200,9 +210,11 @@
 							<div class="portfolio__icon">
 								<img src="./img/portfolio/vector.svg" alt="circle with triangle">
 							</div>
-							<h3>
-								CAsh cow
-							</h3>
+							<div class="portfolio__title">
+								<h3>
+									CAsh cow
+								</h3>
+							</div>
 						</li>
 
 						<li class="portfolio__item">
@@ -212,9 +224,11 @@
 							<div class="portfolio__icon">
 								<img src="./img/portfolio/vector.svg" alt="circle with triangle">
 							</div>
-							<h3>
-								Reel
-							</h3>
+							<div class="portfolio__title">
+								<h3>
+									Reel
+								</h3>
+							</div>
 						</li>
 
 						<li class="portfolio__item">
@@ -224,9 +238,11 @@
 							<div class="portfolio__icon">
 								<img src="./img/portfolio/vector.svg" alt="circle with triangle">
 							</div>
-							<h3>
-								Vlog
-							</h3>
+							<div class="portfolio__title">
+								<h3>
+									Vlog
+								</h3>
+							</div>
 						</li>
 
 						<li class="portfolio__item">
@@ -236,9 +252,11 @@
 							<div class="portfolio__icon">
 								<img src="./img/portfolio/vector.svg" alt="circle with triangle">
 							</div>
-							<h3>
-								CAsh cow
-							</h3>
+							<div class="portfolio__title">
+								<h3>
+									CAsh cow
+								</h3>
+							</div>
 						</li>
 
 						<li class="portfolio__item">
@@ -248,11 +266,12 @@
 							<div class="portfolio__icon">
 								<img src="./img/portfolio/vector.svg" alt="circle with triangle">
 							</div>
-							<h3>
-								CAsh cow
-							</h3>
+						<div class="portfolio__title">
+								<h3>
+									CAsh cow
+								</h3>
+						</div>
 						</li>
-
 					</ul>
 
 				</div>
@@ -265,7 +284,7 @@
 					<div class="testimonials__block">
 
 						<div class="title-block">
-							<div class="section-title section-title--testimonials-margin">
+							<div class="section-title section-title--margin">
 								<h2>
 									Testimonials
 								</h2>
@@ -276,9 +295,11 @@
 						<ul class="testimonials__list">
 
 							<li class="testimonials__item">
-								<h3>
-									marcus
-								</h3>
+								<div class="testimonials__title">
+									<h3>
+										marcus
+									</h3>
+								</div>
 								<span>
 									Co founder
 								</span>
@@ -288,9 +309,11 @@
 							</li>
 
 							<li class="testimonials__item">
-								<h3>
-									peter
-								</h3>
+								<div class="testimonials__title">
+									<h3>
+										peter
+									</h3>
+								</div>
 								<span>
 									Manager
 								</span>
@@ -300,9 +323,11 @@
 							</li>
 
 							<li class="testimonials__item">
-								<h3>
-									jane
-								</h3>
+								<div class="testimonials__title">
+									<h3>
+										jane
+									</h3>
+								</div>
 								<span>
 									CEO
 								</span>
@@ -312,9 +337,11 @@
 							</li>
 
 							<!-- <li class="testimonials__item">
-								<h3>
-									jane
-								</h3>
+								<div class="testimonials__title">
+									<h3>
+										jane
+									</h3>
+								</div>
 								<span>
 									CEO
 								</span>
@@ -324,9 +351,11 @@
 							</li>
 
 							<li class="testimonials__item">
-								<h3>
-									jane
-								</h3>
+							<div class="testimonials__title">
+									<h3>
+										jane
+									</h3>
+							</div>
 								<span>
 									CEO
 								</span>
@@ -347,11 +376,11 @@
 		<footer class="footer">
 
 			<div class="footer__container">
-				
+
 				<div class="footer__inner" id="form">
 
 					<div class="title-block">
-						<div class="section-title section-title--left section-title--footer-inner-margin">
+						<div class="section-title section-title--footer-inner">
 							<h2>
 								I am ready to consult you
 							</h2>
@@ -376,19 +405,15 @@
 								required>
 						</div>
 
-						<button class="button button--padding button--font-size" type="submit">
+						<button class="button button--small-size-mod" type="submit">
 							Send
 						</button>
 					</form>
 
 				</div>
 
-				<a class="footer__scroll-up" href="#top">
-					Go back to the top
-				</a>
-
 				<div class="footer__info">
-					
+
 					<div class="title-block">
 						<div class="section-title section-title--left section-title--mobile">
 							<h2>
@@ -399,29 +424,29 @@
 
 					<address class="footer__address address-footer">
 
-						<div class="address-footer__phone-block">
-							<div class="address-footer__icon-phone">
+						<div class="address-footer__block address-footer__block--phone">
+							<div class="address-footer__icon">
 								<img src="./img/footer/call.svg" alt="icon phone">
 							</div>
-							<a class="address-footer__phone-number" href="tel:+92455478112">
+							<a class="address-footer__text" href="tel:+92455478112">
 								+92 455 478 112
 							</a>
 						</div>
 
-						<div class="address-footer__location-block">
-							<div class="address-footer__icon-location">
+						<div class="address-footer__block address-footer__block--location">
+							<div class="address-footer__icon">
 								<img src="./img/footer/location.svg" alt="icon location">
 							</div>
-							<a class="address-footer__location-name" href="#">
+							<a class="address-footer__text" href="#">
 								defense phase 3, lahore pakistan
 							</a>
 						</div>
 
-						<div class="address-footer__email-block">
-							<div class="address-footer__icon-email">
-								<img src="./img/portfolio/vector.svg" alt="icon mail">
+						<div class="address-footer__block address-footer__block--email">
+							<div class="address-footer__icon address-footer__icon--email">
+								<img src="./img/footer/email.svg" alt="icon mail">
 							</div>
-							<a class="address-footer__email" href='mailto:videoeditor@gmail.com'>
+							<a class="address-footer__text address-footer__text--email" href='mailto:videoeditor@gmail.com'>
 								videoeditor@gmail.com
 							</a>
 						</div>
@@ -449,6 +474,9 @@
 				</div>
 			</div>
 
+			<a class="footer__scroll-up" href="#top">
+				Go back to the top
+			</a>
 		</footer>
 	</div>
 
